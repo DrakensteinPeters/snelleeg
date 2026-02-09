@@ -5,89 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snelleeg – Website in ontwikkeling</title>
 
-    <!-- Basis SEO -->
-    <meta name="description" content="Snelleeg – momenteel wordt er gewerkt aan de website. Neem contact op via e-mail of telefoon.">
+    <meta name="description" content="Snelleeg – momenteel wordt er gewerkt aan de website.">
     <meta name="robots" content="noindex, nofollow">
 
-    <!-- Simpele styling -->
     <style>
         body {
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f5f5f5;
             font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
             color: #333;
         }
 
-        .container {
+        /* Header */
+        header {
+            position: relative;
+            padding: 30px 40px;
             background: #ffffff;
-            padding: 40px 30px;
-            max-width: 500px;
-            width: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            margin: 0;
             text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            font-size: 32px;
         }
 
-        h1 {
-            margin-top: 0;
-            font-size: 28px;
+        .contact-top {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            text-align: right;
+            font-size: 15px;
         }
 
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .contact {
-            margin-top: 25px;
-            font-size: 16px;
-        }
-
-        .contact a {
+        .contact-top a {
+            display: block;
             color: #0066cc;
             text-decoration: none;
             font-weight: bold;
+            margin-bottom: 6px;
         }
 
-        .contact a:hover {
+        .contact-top a:hover {
             text-decoration: underline;
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 20px;
+        /* Content */
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 120px);
+            text-align: center;
+            padding: 20px;
+        }
+
+        main p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .contact-top {
+                position: static;
+                text-align: center;
+                margin-top: 20px;
             }
 
-            h1 {
-                font-size: 24px;
+            header {
+                padding-bottom: 20px;
+            }
+
+            header h1 {
+                font-size: 26px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Website in ontwikkeling</h1>
+<header>
+    <h1>Website in ontwikkeling</h1>
 
-        <p>
-            Momenteel wordt er gewerkt aan deze website.<br>
-            Binnenkort is hier meer te vinden.
-        </p>
-
-        <div class="contact">
-            <p>
-                📧 <a href="mailto:info@snelleeg.nl">info@snelleeg.nl</a>
-            </p>
-            <p>
-                📞 <a href="tel:+31653396815">06-53396815</a>
-            </p>
-        </div>
+    <div class="contact-top">
+        <a href="mailto:info@snelleeg.nl">info@snelleeg.nl</a>
+        <a href="tel:+31653396815">06-53396815</a>
     </div>
+</header>
+
+<main>
+    <p>
+        Momenteel wordt er gewerkt aan deze website.<br>
+        Binnenkort is hier meer te vinden.
+    </p>
+</main>
 
 </body>
 </html>
