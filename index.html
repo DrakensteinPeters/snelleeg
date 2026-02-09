@@ -1,25 +1,476 @@
-<header class="header">
-  <div class="logo">
-    <img src="logo-tijdelijk.png" alt="Snelleeg logo">
-  </div>
-  <div class="contact">
-    <a href="mailto:info@snelleeg.nl">info@snelleeg.nl</a><br>
-    <a href="tel:0653396815">06-53396815</a>
-  </div>
-</header>
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Snelleeg – Woning & bedrijfspand ontruimen</title>
+  <meta name="description" content="Snelleeg: woning- en bedrijfsontruiming. Vandaag gebeld, snel leeg. Gratis offerte." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --accent:#0ea5e9;
+      --accent-2:#0284c7;
+      --card:#f8fafc;
+      --shadow: 0 8px 24px rgba(15,23,42,.08);
+      --radius:16px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(180%) blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0; gap:16px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .logo{
+      width:34px;height:34px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow:0 10px 22px rgba(14,165,233,.25);
+      flex:0 0 34px;
+    }
+    .brand span{font-size:18px}
+    .navlinks{display:flex;gap:18px;align-items:center}
+    .navlinks a{
+      font-size:14px;color:var(--muted);
+      padding:8px 10px;border-radius:10px;
+    }
+    .navlinks a:hover{background:var(--card);color:var(--text)}
+    .actions{display:flex;gap:10px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:8px;
+      height:42px;
+      padding:0 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      font-weight:650;
+      font-size:14px;
+      cursor:pointer;
+      transition:transform .06s ease, box-shadow .2s ease, background .2s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{background:var(--card)}
+    .btn:active{transform:translateY(1px)}
+    .btn.primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#fff;border-color:transparent;
+      box-shadow:0 14px 28px rgba(2,132,199,.25);
+    }
+    .btn.primary:hover{filter:saturate(1.1)}
+    .btn.whatsapp{
+      border-color:#d1fae5;
+      background:#ecfdf5;
+    }
 
-<main class="maintenance">
-  <h1>Momenteel wordt er gewerkt aan deze website</h1>
+    .hero{
+      padding:48px 0 22px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:24px;
+      align-items:start;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border:1px solid var(--line);
+      border-radius:999px;background:#fff;color:var(--muted);
+      font-size:13px;
+    }
+    .badge b{color:var(--text)}
+    h1{
+      margin:14px 0 10px;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-.6px;
+    }
+    .lead{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:18px;
+      max-width:56ch;
+    }
+    .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+    .fineprint{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+    .quickfacts{
+      display:grid;
+      gap:10px;
+    }
+    .fact{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 12px;
+      display:flex;gap:10px;
+      align-items:flex-start;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background:var(--accent);
+      margin-top:6px;flex:0 0 10px;
+    }
+    .fact p{margin:0;color:var(--muted);font-size:14px}
+    .fact p b{color:var(--text)}
 
-  <p>
-    Momenteel wordt er gewerkt aan deze website.<br>
-    Binnenkort is hier meer te vinden.
-  </p>
+    .section{padding:26px 0}
+    .section h2{
+      margin:0 0 12px;
+      font-size:26px;
+      letter-spacing:-.3px;
+    }
+    .sub{
+      margin:0 0 18px;color:var(--muted);
+      max-width:70ch;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .mini{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px;
+    }
+    .mini h3{margin:0 0 6px;font-size:16px}
+    .mini p{margin:0;color:var(--muted);font-size:14px}
+    .icon{
+      width:38px;height:38px;border-radius:14px;
+      background:rgba(14,165,233,.12);
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:10px;
+      border:1px solid rgba(14,165,233,.18);
+      font-size:18px;
+    }
 
-  <ul class="voordelen">
-    <li><strong>Snel en efficiënt</strong> – Zonder vertraging geregeld.</li>
-    <li><strong>Duurzaamheid</strong> – Donatie en recycling waar mogelijk.</li>
-    <li><strong>Flexibele dienstverlening</strong> – Aangepast aan uw planning.</li>
-    <li><strong>Zorg en zorgvuldigheid</strong> – Met respect voor mens en omgeving.</li>
-  </ul>
-</main>
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      counter-reset:step;
+    }
+    .step{
+      background:#fff;border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px;
+    }
+    .step::before{
+      counter-increment:step;
+      content:counter(step);
+      display:inline-flex;
+      width:28px;height:28px;border-radius:10px;
+      align-items:center;justify-content:center;
+      background:rgba(2,132,199,.12);
+      border:1px solid rgba(2,132,199,.18);
+      color:var(--text);
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .step h3{margin:0 0 6px;font-size:16px}
+    .step p{margin:0;color:var(--muted);font-size:14px}
+
+    .bullets{
+      display:grid;grid-template-columns:1fr 1fr;
+      gap:10px;margin:0;padding:0;list-style:none;
+    }
+    .bullets li{
+      background:#fff;border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      color:var(--muted);
+      font-size:14px;
+      display:flex;gap:10px;align-items:flex-start;
+    }
+    .check{
+      width:18px;height:18px;border-radius:8px;
+      background:rgba(34,197,94,.14);
+      border:1px solid rgba(34,197,94,.22);
+      display:inline-flex;align-items:center;justify-content:center;
+      color:#16a34a;
+      font-weight:900;
+      flex:0 0 18px;
+      margin-top:2px;
+      font-size:12px;
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    .contact .mini{height:100%}
+    .contact a.link{
+      color:var(--accent-2);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+    form{display:grid;gap:10px}
+    label{font-size:13px;color:var(--muted)}
+    input,textarea{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px 12px;
+      font-size:14px;
+      outline:none;
+      background:#fff;
+    }
+    input:focus,textarea:focus{border-color:rgba(14,165,233,.55);box-shadow:0 0 0 4px rgba(14,165,233,.12)}
+    textarea{min-height:110px;resize:vertical}
+    .footer{
+      border-top:1px solid var(--line);
+      padding:18px 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footer-row{
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      h1{font-size:36px}
+      .hero-grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .bullets{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .navlinks{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Snelleeg">
+          <div class="logo" aria-hidden="true"></div>
+          <span>Snelleeg</span>
+        </a>
+
+        <nav class="navlinks" aria-label="Navigatie">
+          <a href="#diensten">Diensten</a>
+          <a href="#werkwijze">Werkwijze</a>
+          <a href="#waarom">Waarom</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="actions">
+          <!-- Pas deze aan naar jouw nummer -->
+          <a class="btn whatsapp" href="https://wa.me/31600000000" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn primary" href="tel:+31600000000">Bel direct</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="badge">✅ <b>Vandaag gebeld</b> · snel leeg</div>
+            <h1>Woning & bedrijfspand ontruimen.<br> Zonder gedoe.</h1>
+            <p class="lead">
+              Snelleeg helpt met ontruiming, afvoer en bezemschoon opleveren.
+              Kort, duidelijk en netjes geregeld.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn primary" href="#contact">Gratis offerte</a>
+              <a class="btn" href="tel:+31600000000">Bel: +31 6 0000 0000</a>
+            </div>
+
+            <div class="fineprint">
+              Werkgebied: Nederland · Particulier & zakelijk · Discreet en zorgvuldig
+            </div>
+          </div>
+
+          <aside class="card" aria-label="Snelle feiten">
+            <div class="quickfacts">
+              <div class="fact">
+                <span class="dot" aria-hidden="true"></span>
+                <p><b>Snel beschikbaar</b><br> Vaak binnen 24–48 uur.</p>
+              </div>
+              <div class="fact">
+                <span class="dot" aria-hidden="true"></span>
+                <p><b>Heldere prijs</b><br> Afspraak vooraf, geen verrassingen.</p>
+              </div>
+              <div class="fact">
+                <span class="dot" aria-hidden="true"></span>
+                <p><b>Bezemschoon</b><br> Oplevering zoals afgesproken.</p>
+              </div>
+              <div class="fact">
+                <span class="dot" aria-hidden="true"></span>
+                <p><b>Afvoer & recycling</b><br> Alles geregeld, netjes weg.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="diensten" class="section">
+      <div class="container">
+        <h2>Wat we doen</h2>
+        <p class="sub">Geen ruis. Alleen de diensten die je nodig hebt.</p>
+
+        <div class="grid-3">
+          <div class="mini">
+            <div class="icon" aria-hidden="true">🏠</div>
+            <h3>Woningontruiming</h3>
+            <p>Van kleine woning tot complete ontruiming. Netjes en discreet.</p>
+          </div>
+          <div class="mini">
+            <div class="icon" aria-hidden="true">🏢</div>
+            <h3>Bedrijfspanden</h3>
+            <p>Kantoor, opslag of winkel. Snel leeg en strak opgeleverd.</p>
+          </div>
+          <div class="mini">
+            <div class="icon" aria-hidden="true">♻️</div>
+            <h3>Afvoer & bezemschoon</h3>
+            <p>Afvoeren, sorteren en bezemschoon opleveren volgens afspraak.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="werkwijze" class="section">
+      <div class="container">
+        <h2>Zo werken wij</h2>
+        <p class="sub">Simpel stappenplan. Snel duidelijkheid.</p>
+
+        <div class="steps">
+          <div class="step">
+            <h3>Neem contact op</h3>
+            <p>Bel, WhatsApp of stuur het formulier. Kort de situatie uitleggen.</p>
+          </div>
+          <div class="step">
+            <h3>Afspraak & prijs</h3>
+            <p>We maken een plan en een heldere prijsafspraak vooraf.</p>
+          </div>
+          <div class="step">
+            <h3>Ontruiming</h3>
+            <p>Wij regelen alles en leveren bezemschoon op zoals afgesproken.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="waarom" class="section">
+      <div class="container">
+        <h2>Waarom Snelleeg</h2>
+        <p class="sub">Betrouwbaar, snel en zonder poespas.</p>
+
+        <ul class="bullets">
+          <li><span class="check" aria-hidden="true">✓</span> Snel beschikbaar en flexibel plannen</li>
+          <li><span class="check" aria-hidden="true">✓</span> Heldere afspraken en transparante prijs</li>
+          <li><span class="check" aria-hidden="true">✓</span> Netjes, discreet en respectvol</li>
+          <li><span class="check" aria-hidden="true">✓</span> Afvoer & recycling zorgvuldig geregeld</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="sub">Snel antwoord. Stuur de details, dan nemen we contact op.</p>
+
+        <div class="contact">
+          <div class="mini">
+            <h3>Direct contact</h3>
+            <p>
+              Telefoon: <a class="link" href="tel:+31600000000">+31 6 0000 0000</a><br>
+              WhatsApp: <a class="link" href="https://wa.me/31600000000" target="_blank" rel="noopener">Chat openen</a><br>
+              E-mail: <a class="link" href="mailto:info@snelleeg.nl">info@snelleeg.nl</a><br><br>
+              Werkgebied: Nederland
+            </p>
+            <p style="margin-top:12px;color:var(--muted);font-size:13px">
+              Tip: noem locatie, type pand en gewenste datum. Dan kunnen we sneller een prijs indicatie geven.
+            </p>
+          </div>
+
+          <div class="mini">
+            <h3>Gratis offerte aanvragen</h3>
+
+            <!-- Dit formulier is "snel & leeg": zonder backend.
+                 Optie A: mailto (werkt niet altijd lekker).
+                 Optie B: koppel later aan Formspree/Netlify/own backend.
+            -->
+            <form action="mailto:info@snelleeg.nl" method="post" enctype="text/plain">
+              <div>
+                <label for="naam">Naam</label>
+                <input id="naam" name="Naam" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="tel">Telefoon</label>
+                <input id="tel" name="Telefoon" autocomplete="tel" required />
+              </div>
+              <div>
+                <label for="bericht">Bericht</label>
+                <textarea id="bericht" name="Bericht" placeholder="Bijv. woning, 3 kamers, locatie, gewenste datum…"></textarea>
+              </div>
+              <button class="btn primary" type="submit">Verstuur</button>
+              <div class="fineprint">Liever direct? Bel of WhatsApp, dat gaat het snelst.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div>© <span id="year"></span> Snelleeg</div>
+          <div>
+            <a href="tel:+31600000000">+31 6 0000 0000</a> ·
+            <a href="mailto:info@snelleeg.nl">info@snelleeg.nl</a>
+            <!-- Optioneel: · KvK 12345678 -->
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
