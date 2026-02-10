@@ -1,343 +1,191 @@
-:root {
-  --yellow: #f5c400;
-  --yellow-2: #ffd84d;
-  --black: #0b0b0b;
-  --text: #101010;
-  --muted: rgba(16, 16, 16, 0.72);
-  --border: rgba(0, 0, 0, 0.10);
-  --shadow: 0 18px 50px rgba(0, 0, 0, 0.10);
-  --radius: 18px;
-  --radius-sm: 12px;
-}
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-* {
-  box-sizing: border-box;
-}
+  <title>Snelleeg.nl – ontruimen met gevoel</title>
+  <meta name="description" content="Snelleeg.nl verzorgt woning- en bedrijfsontruimingen met zorg, respect en snelheid. Ook bij spoed.">
 
-html,
-body {
-  height: 100%;
-}
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
 
-body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--text);
-  background: #fff;
-  line-height: 1.6;
-}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+<body>
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  <a class="skiplink" href="#content">Ga naar inhoud</a>
 
-.container {
-  width: min(1120px, calc(100% - 40px));
-  margin: 0 auto;
-}
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="img/logo.png" alt="Snelleeg.nl logo" class="brand-logo">
+      </div>
 
-.skiplink {
-  position: absolute;
-  left: -999px;
-  top: 10px;
-  background: #fff;
-  border: 2px solid var(--black);
-  padding: 10px 12px;
-  border-radius: 10px;
-  z-index: 9999;
-}
+      <div class="header-actions">
+        <a class="chip" href="tel:+31659110607">+31 6 5911 0607</a>
+        <a class="chip chip-outline" href="mailto:johan@snelleeg.nl">johan@snelleeg.nl</a>
+      </div>
+    </div>
+  </header>
 
-.skiplink:focus {
-  left: 12px;
-}
+  <!-- Main -->
+  <main id="content">
 
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-}
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
-  gap: 16px;
-}
+        <div>
+          <p class="kicker">Snelleeg.nl</p>
+          <h1>ontruimen met gevoel</h1>
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+          <p class="lead">
+            Uw woning moet ontruimd worden. Dat is vaak een emotioneel en uitdagend proces.
+            Zo kan het een seniorverhuizing betreffen, maar ook een overlijden.
+            Snelleeg.nl behandelt uw ontruiming met zorg en respect.
+            Wij begrijpen uw situatie en handelen daar ook naar door het snel en zorgvuldig af te handelen.
+            Uw wensen worden overal in meegenomen met oog voor detail en duurzaamheid.
+            Laat ons uw zorgen uit handen nemen, zodat u zich op belangrijker zaken kunt richten.
+          </p>
 
-.brand-logo {
-  width: 180px;
-  height: auto;
-}
+          <div class="cta-row">
+            <a href="#contact" class="btn">Neem contact op</a>
+            <a href="#diensten" class="btn btn-ghost">Wat wij doen</a>
+          </div>
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
+          <div class="trust-row">
+            <div class="trust-item"><span class="dot"></span>Zorg & respect</div>
+            <div class="trust-item"><span class="dot"></span>Snel beschikbaar</div>
+            <div class="trust-item"><span class="dot"></span>Duurzaam</div>
+          </div>
+        </div>
 
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: var(--yellow);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  font-weight: 700;
-}
+        <aside class="hero-card">
+          <h2 class="card-title">Snel geregeld</h2>
+          <p class="card-text">
+            Wij maken graag een afspraak op locatie en offreren gratis,
+            geheel vrijblijvend en snel.
+          </p>
 
-.chip:hover {
-  filter: brightness(0.98);
-}
+          <div class="card-actions">
+            <a class="btn btn-dark" href="tel:+31659110607">Bel direct</a>
+            <a class="btn btn-dark-outline" href="mailto:johan@snelleeg.nl">Mail ons</a>
+          </div>
 
-.chip-outline {
-  background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.18);
-  font-weight: 700;
-}
+          <div class="divider"></div>
 
-.hero {
-  background: linear-gradient(180deg, var(--yellow) 0%, var(--yellow-2) 55%, #fff 100%);
-  padding: 46px 0 26px;
-  border-bottom: 1px solid var(--border);
-}
+          <ul class="mini-list">
+            <li>Spoed mogelijk (binnen 24 uur)</li>
+            <li>Bezemschoon & verkoopklaar</li>
+            <li>Woningen & bedrijfspanden</li>
+          </ul>
+        </aside>
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 26px;
-  align-items: start;
-}
+      </div>
+    </section>
 
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 10px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.08);
-  color: rgba(0, 0, 0, 0.82);
-  font-weight: 800;
-  letter-spacing: 0.2px;
-}
+    <!-- Diensten -->
+    <section id="diensten" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Wat doet Snelleeg.nl voor u?</h2>
+          <p class="section-sub">
+            Wij nemen u alles uit handen — zorgvuldig, snel en met respect.
+          </p>
+        </header>
 
-h1 {
-  margin: 0 0 12px;
-  font-size: clamp(34px, 5vw, 56px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-}
+        <div class="grid">
+          <div class="panel">
+            <ul class="checklist">
+              <li>Ontzorgen bij woningontruiming</li>
+              <li>Afvoeren, vervoeren of herbestemmen van inboedel</li>
+              <li>Duurzame verwerking en kringloop</li>
+              <li>Verkoop of achterlaten van goederen</li>
+              <li>Passende opslag indien nodig</li>
+            </ul>
+          </div>
 
-.lead {
-  margin: 0 0 18px;
-  color: rgba(0, 0, 0, 0.85);
-  font-size: 16.5px;
-}
+          <div class="panel">
+            <ul class="checklist">
+              <li>Bezemschoon en verkoopklaar opleveren</li>
+              <li>Ook zwaar vervuilde woningen</li>
+              <li>Kleine reparaties</li>
+              <li>Vloerbedekking verwijderen</li>
+              <li>All-in prijs of uurtarief</li>
+            </ul>
+          </div>
+        </div>
 
-.cta-row {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin: 18px 0 18px;
-}
+        <div class="note">
+          <p>
+            Neem gerust contact met ons op. Wij plannen een afspraak op locatie
+            en sturen u daarna een vrijblijvende offerte.
+          </p>
+        </div>
+      </div>
+    </section>
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 16px;
-  border-radius: 999px;
-  background: var(--black);
-  color: #fff;
-  font-weight: 800;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  transition: transform 0.06s ease, filter 0.2s ease;
-}
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
+      <div class="container contact-grid">
 
-.btn:hover {
-  filter: brightness(1.05);
-}
+        <div>
+          <h2>Contact</h2>
+          <p class="section-sub">
+            Neem contact met ons op voor een snelle en zorgvuldige afhandeling.
+          </p>
 
-.btn:active {
-  transform: translateY(1px);
-}
+          <div class="contact-cards">
+            <a class="contact-card" href="tel:+31659110607">
+              <span class="label">Telefoon</span>
+              <span class="value">+31 6 5911 0607</span>
+              <span class="hint">Klik om te bellen</span>
+            </a>
 
-.btn-ghost {
-  background: transparent;
-  color: var(--black);
-  border: 1px solid rgba(0, 0, 0, 0.22);
-}
+            <a class="contact-card" href="mailto:johan@snelleeg.nl">
+              <span class="label">E-mail</span>
+              <span class="value">johan@snelleeg.nl</span>
+              <span class="hint">Klik om te mailen</span>
+            </a>
 
-.btn-dark {
-  background: var(--black);
-  color: #fff;
-}
+            <a class="contact-card" href="#" target="_blank">
+              <span class="label">Instagram</span>
+              <span class="value">instagram account</span>
+              <span class="hint">Klik om te openen</span>
+            </a>
+          </div>
+        </div>
 
-.btn-dark-outline {
-  background: transparent;
-  color: var(--black);
-  border: 1px solid rgba(0, 0, 0, 0.22);
-}
+        <aside class="address-card">
+          <h3>Snelleeg.nl</h3>
+          <p class="address">
+            Rollandstraat 12<br>
+            2013 SP Haarlem
+          </p>
+          <p class="muted">KvK Amsterdam 98927744</p>
+        </aside>
 
-.trust-row {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-}
+      </div>
+    </section>
 
-.trust-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.60);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  font-weight: 700;
-}
+  </main>
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--black);
-  display: inline-block;
-}
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      © <span id="year"></span> Snelleeg.nl
+    </div>
+  </footer>
 
-.hero-card {
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(0, 0, 0, 0.10);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow);
-}
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-.card-title {
-  margin: 0 0 8px;
-  font-size: 20px;
-  letter-spacing: -0.01em;
-}
-
-.card-text {
-  margin: 0 0 14px;
-  color: var(--muted);
-}
-
-.card-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 14px;
-}
-
-.divider {
-  height: 1px;
-  background: rgba(0, 0, 0, 0.10);
-  margin: 14px 0;
-}
-
-.mini-list {
-  margin: 0;
-  padding-left: 18px;
-  color: rgba(0, 0, 0, 0.82);
-}
-
-.mini-list li {
-  margin: 8px 0;
-}
-
-.section {
-  padding: 44px 0;
-}
-
-.section-alt {
-  background: #fafafa;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.section-header {
-  margin-bottom: 18px;
-}
-
-.section-header h2 {
-  margin: 0 0 6px;
-  font-size: clamp(24px, 3vw, 34px);
-  letter-spacing: -0.02em;
-}
-
-.section-sub {
-  margin: 0;
-  color: var(--muted);
-  max-width: 74ch;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.panel {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
-}
-
-.checklist {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.checklist li {
-  position: relative;
-  padding-left: 34px;
-  margin: 12px 0;
-  color: rgba(0, 0, 0, 0.86);
-}
-
-.checklist li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 24px;
-  height: 24px;
-  border-radius: 999px;
-  background: var(--yellow);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  color: var(--black);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.note {
-  margin-top: 18px;
-  border-left:
+</body>
+</html>
