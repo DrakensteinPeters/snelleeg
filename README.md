@@ -1,8 +1,16 @@
-nelleeg.nl one-page website
+snelleeg.nl one-page website
 
 Bestanden:
 - index.html : hoofdpagina
-- css/styles.css : styling
-- Voeg zelf het logo toe als img/logo.png
+- css/style.css : styling
+- img/logo.png : logo
 
-Open index.html in je browser of upload alles naar je webhosting.
+Structuur:
+/
+  index.html
+  /css
+    style.css
+  /img
+    logo.png
+
+Open index.html in je browser of upload alles naar GitHub Pages/webhosting.
