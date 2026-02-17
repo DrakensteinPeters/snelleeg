@@ -1,20 +1,4 @@
-/* basis */
-
-body {
-  margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  color: #111;
-  background: #fff;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
-
-
-/* sticky header */
+/* ===== HEADER BASIS ===== */
 
 .site-header {
   position: sticky;
@@ -22,9 +6,6 @@ body {
   z-index: 9999;
   background: #2f97d1;
 }
-
-
-/* header layout */
 
 .header-inner {
   max-width: 1100px;
@@ -36,15 +17,12 @@ body {
   justify-content: space-between;
 }
 
-
-/* logo */
-
 .logo {
   height: 50px;
 }
 
 
-/* navigation */
+/* ===== NAV ===== */
 
 .nav {
   display: flex;
@@ -58,26 +36,18 @@ body {
   font-weight: 600;
 }
 
-.nav a:hover {
-  opacity: 0.8;
-}
 
-
-/* WhatsApp knop */
+/* ===== WHATSAPP BUTTON ===== */
 
 .whatsapp-btn {
   background: #25D366;
-  color: #fff;
+  color: white;
   padding: 10px 16px;
   border-radius: 6px;
 }
 
-.whatsapp-btn:hover {
-  background: #1ebe5d;
-}
 
-
-/* dropdown */
+/* ===== DROPDOWN FIX (BELANGRIJK) ===== */
 
 .dropdown {
   position: relative;
@@ -85,91 +55,44 @@ body {
 
 .dropdown-menu {
 
-  display: none;
-
   position: absolute;
-  top: 35px;
+
+  top: 100%;
   left: 0;
 
   background: #fff;
 
-  border-radius: 6px;
+  min-width: 180px;
 
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 
-  min-width: 160px;
+  border-radius: 6px;
+
+  z-index: 9999;
+
+  display: none;
 }
+
+/* BELANGRIJK: hover op hele container */
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* clickable links */
 
 .dropdown-menu a {
 
   display: block;
 
-  padding: 10px 15px;
+  padding: 12px 15px;
 
   color: #111;
+
+  text-decoration: none;
 }
 
 .dropdown-menu a:hover {
 
-  background: #f5f5f5;
-}
-
-.dropdown:hover .dropdown-menu {
-
-  display: block;
-}
-
-
-/* floating WhatsApp knop */
-
-.floating-whatsapp {
-
-  position: fixed;
-
-  right: 20px;
-
-  bottom: 20px;
-
-  background: #25D366;
-
-  padding: 14px;
-
-  border-radius: 50%;
-
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-
-  z-index: 9999;
-}
-
-.floating-whatsapp img {
-
-  width: 28px;
-}
-
-
-/* headings */
-
-h1 {
-  font-size: 32px;
-}
-
-h2 {
-  margin-top: 40px;
-}
-
-
-/* responsive */
-
-@media (max-width: 768px) {
-
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .nav {
-    flex-wrap: wrap;
-  }
-
+  background: #f2f2f2;
 }
