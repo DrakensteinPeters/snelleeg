@@ -3,6 +3,7 @@ body {
 font-family: Inter, sans-serif;
 margin:0;
 color:#111;
+background:#fff;
 }
 
 .container {
@@ -11,9 +12,12 @@ margin:auto;
 padding:20px;
 }
 
-.header {
+.site-header {
 background:#fff;
 border-bottom:1px solid #eee;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .header-inner {
@@ -22,34 +26,34 @@ justify-content:space-between;
 align-items:center;
 }
 
-.logo {
+.brand-logo {
 height:50px;
 }
 
-.header-buttons {
+.header-actions {
 display:flex;
 gap:10px;
 }
 
-.btn {
-padding:10px 15px;
+.chip {
+padding:10px 16px;
 background:#111;
 color:#fff;
+border-radius:30px;
 text-decoration:none;
-border-radius:6px;
-display:inline-flex;
+display:flex;
 align-items:center;
-gap:6px;
+gap:8px;
 }
 
-.btn.whatsapp {
-background:#25D366;
-}
-
-.btn.outline {
+.chip-outline {
 background:#fff;
-color:#111;
 border:1px solid #111;
+color:#111;
+}
+
+.whatsapp {
+background:#25D366;
 }
 
 .hero {
@@ -57,24 +61,51 @@ background:#f5c400;
 padding:80px 0;
 }
 
-.cards {
+.hero h1 {
+font-size:48px;
+margin-bottom:20px;
+}
+
+.section {
+padding:60px 0;
+}
+
+.grid {
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:1fr 1fr;
 gap:20px;
 }
 
-.card {
+.panel {
 background:#fff;
 padding:20px;
 border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,.1);
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-card {
+display:block;
+padding:20px;
+background:#fff;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+margin-bottom:10px;
+text-decoration:none;
+color:#111;
 }
 
 .floating-whatsapp {
 position:fixed;
-right:20px;
 bottom:20px;
+right:20px;
 background:#25D366;
 padding:15px;
 border-radius:50%;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+@media(max-width:768px){
+.grid {
+grid-template-columns:1fr;
+}
 }
